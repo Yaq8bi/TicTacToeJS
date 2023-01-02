@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+body{
+    font-family: "Merriweather Sans", sans-serif;
+    color:white;
+    text-shadow:
+    0.05em 0.05em 0 black,
+    0.10em 0.10em 0 green;
+}
+
+.wrapper{
+    background-color: #070707cb;
+    height:800px;
+    max-width:1440px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto;
+}
+.title{
+    color:rgba(172, 255, 47, 0.757);
+    text-shadow:
+    0.15em 0.15em 0 rgb(0, 82, 0),
+    0.25em 0.25em 0 rgba(255, 255, 0, 0.758);
+}
+
+.restart{
+    background:linear-gradient(35deg,rgba(255, 255, 255, 0.664),rgba(192, 192, 192, 0.815),rgba(56, 56, 56, 0.596));
+    width: 175px;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50px;
+    box-shadow:
+    0.12em 0.12em 5px rgba(148, 245, 2, 0.842),
+    0.30em 0.30em 5px green,
+    0.5em 0.5em 7px rgba(0, 0, 0, 0.438)
+    ;
+    color: green;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 1s ease;
+    text-shadow:
+    0.025em 0.025em 0 greenyellow,
+    0.05em 0.05em 0 green;
+    margin-top:30px;
+}
+
+h1{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.restart:hover{
+    background-color: black;
+    color:greenyellow;
+    box-shadow:
+    0.24em 0.24em 5px rgba(148, 245, 2, 0.842),
+    0.60em 0.60em 5px green,
+    1em 1em 5px rgba(0, 59, 8, 0.726)
+    ;
+    text-shadow:
+    0.025em 0.025em 0 green,
+    0.05em 0.05em 0 #000000;
+    bottom: 10px;  
+}
+
+.game{
+    width:500px;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    font-size:24px;
+}
+
+.header .player-x{
+    flex: 1;
+    border-bottom:5px solid silver;
+    padding-bottom: 8px;
+}
+
+.header .player-o{
+    flex: 1;
+    border-bottom:5px solid silver;
+    padding-bottom: 8px;
+}
+
+.board{
+    background: linear-gradient(35deg,rgb(61, 61, 61),rgb(3, 177, 3),rgba(26, 25, 25, 0.733));
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+    grid-gap: 0px;
+    flex-grow:1;
+    padding:10px;
+    animation-name: cabbar;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    border-radius: 2rem;
+    border-right:5px rgb(37, 51, 37) solid;
+    border-bottom:5px rgb(37, 51, 37) solid;
+    box-shadow:
+    .2rem .2rem 0 rgb(16, 22, 16),
+    .3rem .3rem  0 rgba(0, 0, 0, 0.521);
+}
+
+.board-tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    color:rgb(141, 233, 4);
+    text-shadow:
+    0.05em 0.05em 0 rgb(233, 179, 3),
+    0.10em 0.10em 0 rgba(179, 179, 2, 0.758);
+    transition:all .5s ease;
+    cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n)) {
+    border-right: 3px solid silver;
+}
+
+.board-tile:not(:nth-last-child(-n+3)) {
+    border-bottom: 3px solid silver;
+}
+
+.board-tile:hover {
+    background:#eee ;
+    border-radius: 1rem;
+}
